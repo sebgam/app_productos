@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use desaroolloG\product;
 
-class DatabaseSeeder extends Seeder
+class productsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(productsTableSeeder::class);
+		factory(product::class,80)->create();
     }
 }
