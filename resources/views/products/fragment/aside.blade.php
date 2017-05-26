@@ -1,0 +1,3 @@
+<p class=" alert alert-info">
+	desde aqui podemos crear, eliminar, listar y editar los productos...
+</p>
