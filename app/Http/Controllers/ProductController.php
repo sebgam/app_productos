@@ -36,7 +36,7 @@ class ProductController extends Controller
 
     	$product->delete(); //elimina el campo con el id
 
-    	return back()->with('info','El producto ' . $product->name . ' fue ');
+    	return back()->with('info','El producto con nombre ' . $product->name . ' fue ');
 
     }
 
