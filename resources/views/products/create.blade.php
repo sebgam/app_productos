@@ -12,7 +12,8 @@
 		<a href="{{ route('products.index')}}" class="btn btn-success pull-right" > inicio</a>
 
 	</h3>
-	
+
+@include('products.fragment.error')	
 
 {!! Form::open(['route' => 'products.store']) !!}
 

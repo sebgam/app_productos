@@ -4,6 +4,7 @@ namespace desaroolloG\Http\Controllers;
 
 use Illuminate\Http\Request;
 use desaroolloG\product;
+use desaroolloG\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -22,6 +23,17 @@ class ProductController extends Controller
     public function create(){
 
         return view('products.create');
+    }
+
+    public function store(ProductRequest $request){
+
+        return 'producto guardado';
+
+    }
+    public function update(ProductRequest $request, $id){
+
+        return 'producto guardado ' . $id;
+
     }
 
     public function show($id){
