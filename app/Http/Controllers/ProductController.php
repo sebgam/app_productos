@@ -27,12 +27,28 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
-        return 'producto guardado';
+        $product = new product;
+        $product->name = $request->name;
+        $product->short = $request->short;
+        $product->body = $request->body;
+
+        $product->save();
+
+
+        return redirect()->route('products.index')->with('info','El producto ' . $product->name . ' fue guardado exitosamente');
 
     }
     public function update(ProductRequest $request, $id){
 
-        return 'producto guardado ' . $id;
+        $product = product::find($id);
+        $product->name = $request->name;
+        $product->short = $request->short;
+        $product->body = $request->body;
+
+        $product->save();
+
+
+        return redirect()->route('products.index')->with('info','El producto ' . $product->name . ' fue actualizado exitosamente');
 
     }
 
@@ -48,7 +64,7 @@ class ProductController extends Controller
 
     	$product->delete(); //elimina el campo con el id
 
-    	return back()->with('info','El producto con nombre ' . $product->name . ' fue ');
+    	return back()->with('info','El producto con nombre ' . $product->name . ' fue eliminado');
 
     }
 
